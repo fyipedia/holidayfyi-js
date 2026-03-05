@@ -1,6 +1,6 @@
 {
   "name": "holidayfyi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pure TypeScript holiday date engine -- Easter calculations (Western & Orthodox), nth weekday finder, days-until counting, next occurrence lookup, and weekend/weekday helpers. Zero dependencies.",
   "type": "module",
   "main": "dist/index.js",
