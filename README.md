@@ -17,9 +17,10 @@ Pure TypeScript holiday date engine for developers. Calculate [Easter dates](htt
 
 - [Install](#install)
 - [Quick Start](#quick-start)
-- [The Computus Algorithm](#the-computus-algorithm)
-- [Finding Nth Weekdays](#finding-nth-weekdays)
-- [Days Until & Next Occurrence](#days-until--next-occurrence)
+- [What You Can Do](#what-you-can-do)
+  - [Easter Calculation (Computus Algorithm)](#easter-calculation-computus-algorithm)
+  - [Finding Nth Weekdays](#finding-nth-weekdays)
+  - [Days Until & Next Occurrence](#days-until--next-occurrence)
 - [API Reference](#api-reference)
 - [TypeScript Types](#typescript-types)
 - [Features](#features)
@@ -61,7 +62,9 @@ const days = daysUntil(easter);
 console.log(days);  // days remaining
 ```
 
-## The Computus Algorithm
+## What You Can Do
+
+### Easter Calculation (Computus Algorithm)
 
 Computing Easter's date is one of the oldest algorithms still in use. The Anonymous Gregorian algorithm (used since 1582) uses modular arithmetic to find the first Sunday after the first ecclesiastical full moon after March 21.
 
@@ -83,7 +86,39 @@ day = (h + el - 7m + 114) % 31 + 1
 
 For Orthodox Easter, the Meeus Julian algorithm is used instead, and 13 days are added to convert from the Julian to the Gregorian calendar. This offset accounts for the accumulated drift between the two calendars.
 
-## Finding Nth Weekdays
+Easter determines the dates of many other moveable feasts in the Christian calendar:
+
+| Holiday | Rule | 2026 Date |
+|---------|------|----------|
+| **Shrove Tuesday** | 47 days before Easter | Feb 17 |
+| **Ash Wednesday** | 46 days before Easter | Feb 18 |
+| **Palm Sunday** | 7 days before Easter | Mar 29 |
+| **Good Friday** | 2 days before Easter | Apr 3 |
+| **Easter Sunday** | First Sunday after Paschal full moon | Apr 5 |
+| **Ascension Day** | 39 days after Easter | May 14 |
+| **Whit Sunday (Pentecost)** | 49 days after Easter | May 24 |
+
+```typescript
+import { easterWestern, easterOrthodox } from "holidayfyi";
+
+// Western Easter dates for the next several years
+for (const year of [2026, 2027, 2028, 2029, 2030]) {
+  const date = easterWestern(year);
+  console.log(`${year}: ${date.toISOString().slice(0, 10)}`);
+}
+
+// Orthodox Easter -- typically 1-5 weeks after Western Easter
+const western = easterWestern(2026);
+const orthodox = easterOrthodox(2026);
+const diffDays = Math.round((orthodox.getTime() - western.getTime()) / 86400000);
+console.log(`Difference: ${diffDays} days`);  // 7
+```
+
+Learn more: [Easter Calculator](https://holidayfyi.com/tools/easter/) · [Computus Algorithm](https://en.wikipedia.org/wiki/Date_of_Easter) · [Holiday Calendar](https://holidayfyi.com/)
+
+### Finding Nth Weekdays
+
+Many public holidays are defined as the "nth weekday of a month" rather than a fixed date. This pattern is especially common in the United States, Canada, and Australia.
 
 ```typescript
 import { nthWeekdayOfMonth, WEEKDAY } from "holidayfyi";
@@ -100,7 +135,9 @@ const thanksgiving = nthWeekdayOfMonth(2026, 11, WEEKDAY.THURSDAY, 4); // Thanks
 const lastFriday = nthWeekdayOfMonth(2026, 3, WEEKDAY.FRIDAY, -1);
 ```
 
-## Days Until & Next Occurrence
+Learn more: [Holiday Calendar](https://holidayfyi.com/) · [US Federal Holidays](https://holidayfyi.com/country/us/) · [Date Calculator](https://holidayfyi.com/tools/date-calculator/)
+
+### Days Until & Next Occurrence
 
 ```typescript
 import { daysUntil, nextOccurrence, isWeekend, getWeekdayName } from "holidayfyi";
@@ -120,6 +157,8 @@ console.log(nextNewYear.toISOString().slice(0, 10));
 console.log(isWeekend(christmas));          // true or false
 console.log(getWeekdayName(christmas));     // "Friday"
 ```
+
+Learn more: [Countdown Timers](https://holidayfyi.com/today/) · [Country Holiday Calendars](https://holidayfyi.com/country/) · [REST API Docs](https://holidayfyi.com/developers/)
 
 ## API Reference
 
