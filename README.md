@@ -9,6 +9,10 @@ Pure TypeScript holiday date engine for developers. Calculate [Easter dates](htt
 
 > **Try the interactive tools at [holidayfyi.com](https://holidayfyi.com/)** -- holiday calendar, countdown timers, and date calculators.
 
+<p align="center">
+  <img src="demo.gif" alt="holidayfyi demo — Easter dates and holiday lookup" width="800">
+</p>
+
 ## Install
 
 ```bash
