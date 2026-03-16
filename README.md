@@ -1,6 +1,6 @@
 # holidayfyi
 
-[![npm](https://img.shields.io/npm/v/holidayfyi)](https://www.npmjs.com/package/holidayfyi)
+[![npm version](https://agentgif.com/badge/npm/holidayfyi/version.svg)](https://www.npmjs.com/package/holidayfyi)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](https://www.npmjs.com/package/holidayfyi)
