@@ -114,7 +114,7 @@ const diffDays = Math.round((orthodox.getTime() - western.getTime()) / 86400000)
 console.log(`Difference: ${diffDays} days`);  // 7
 ```
 
-Learn more: [Easter Calculator](https://holidayfyi.com/tools/easter/) · [Computus Algorithm](https://en.wikipedia.org/wiki/Date_of_Easter) · [Holiday Calendar](https://holidayfyi.com/)
+Learn more: [Computus Algorithm](https://en.wikipedia.org/wiki/Date_of_Easter) · [Holiday Calendar](https://holidayfyi.com/)
 
 ### Finding Nth Weekdays
 
@@ -135,9 +135,7 @@ const thanksgiving = nthWeekdayOfMonth(2026, 11, WEEKDAY.THURSDAY, 4); // Thanks
 const lastFriday = nthWeekdayOfMonth(2026, 3, WEEKDAY.FRIDAY, -1);
 ```
 
-Learn more: [Holiday Calendar](https://holidayfyi.com/) · [US Federal Holidays](https://holidayfyi.com/country/us/) · [Date Calculator](https://holidayfyi.com/tools/date-calculator/)
-
-### Days Until & Next Occurrence
+Learn more: [Holiday Calendar](https://holidayfyi.com/) · ### Days Until & Next Occurrence
 
 ```typescript
 import { daysUntil, nextOccurrence, isWeekend, getWeekdayName } from "holidayfyi";
@@ -219,9 +217,7 @@ import type { Weekday } from "holidayfyi";
 ## Learn More About Holidays
 
 - **Browse**: [Holiday Calendar](https://holidayfyi.com/) · [Countries](https://holidayfyi.com/country/) · [Today](https://holidayfyi.com/today/)
-- **Tools**: [Date Calculator](https://holidayfyi.com/tools/date-calculator/) · [Easter Calculator](https://holidayfyi.com/tools/easter/)
-- **API**: [REST API Docs](https://holidayfyi.com/developers/) · [OpenAPI Spec](https://holidayfyi.com/api/openapi.json)
-- **Python**: [PyPI Package](https://pypi.org/project/holidayfyi/)
+- **Tools**: - **API**: [REST API Docs](https://holidayfyi.com/developers/) · - **Python**: [PyPI Package](https://pypi.org/project/holidayfyi/)
 
 ## Also Available for Python
 
